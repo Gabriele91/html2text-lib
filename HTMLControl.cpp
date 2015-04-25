@@ -320,12 +320,12 @@ HTMLControl::yylex2(yy_HTMLParser_stype *value_return, int *tag_type_return)
                 /*
                  * Scan "<!DOCTYPE ...>" tag.
                  */
-                if (!isalpha(c)) return SCAN_ERROR;
+                if (!isalpha(static_cast<unsigned char>(c))) return SCAN_ERROR;
                 string tag_name(1, '!');
                 tag_name += c;
                 for (;;) {
                     c = get_char();
-                    if (!isalnum(c) && c != '-') break;
+                    if (!isalnum(static_cast<unsigned char>(c)) && c != '-') break;
                     tag_name += c;
                 }
                 if (cmp_nocase(tag_name, "!DOCTYPE") != 0) return SCAN_ERROR;
@@ -337,16 +337,16 @@ HTMLControl::yylex2(yy_HTMLParser_stype *value_return, int *tag_type_return)
                 return DOCTYPE;
             }
 
-            if (c == '/' || isalpha(c) || c == '_') {
+            if (c == '/' || isalpha(static_cast<unsigned char>(c)) || c == '_') {
                 string tag_name;
                 bool   is_end_tag = false;
 
                 if (c == '/') { is_end_tag = true; c = get_char(); }
-                if (!isalpha(c) && c != '_') return SCAN_ERROR;
+                if (!isalpha(static_cast<unsigned char>(c)) && c != '_') return SCAN_ERROR;
                 tag_name += c;
                 for (;;) {
                     c = get_char();
-                    if (!isalnum(c) && c != '-' && c != '_' && c != ':') break;
+                    if (!isalnum(static_cast<unsigned char>(c)) && c != '-' && c != '_' && c != ':') break;
                     // Tolerate colons in tags for MS-Word's sake - Arno
                     tag_name += c;
                 }
@@ -359,7 +359,7 @@ HTMLControl::yylex2(yy_HTMLParser_stype *value_return, int *tag_type_return)
                  */
                 auto_ptr<list<TagAttribute> > tag_attributes;
                 if (!is_end_tag) {
-                    while (isalpha(c) || c == '_') {
+                    while (isalpha(static_cast<unsigned char>(c)) || c == '_') {
                         TagAttribute attribute;
 
                         /*
@@ -368,7 +368,7 @@ HTMLControl::yylex2(yy_HTMLParser_stype *value_return, int *tag_type_return)
                         attribute.first = c;
                         for (;;) {
                             c = get_char();
-                            if (!isalpha(c) && c != '-' && c != '_' && c != ':') break;
+                            if (!isalpha(static_cast<unsigned char>(c)) && c != '-' && c != '_' && c != ':') break;
                             // Same as in line 352 - Arno
                             attribute.first += c;
                         }
@@ -503,7 +503,7 @@ HTMLControl::yylex2(yy_HTMLParser_stype *value_return, int *tag_type_return)
                 if (c == '<') {
                     int c2;
                     unget_char(c2 = get_char());
-                    if (c2 == '!' || c2 == '/' || isalpha(c2)) { unget_char(c); break; }
+                    if (c2 == '!' || c2 == '/' || isalpha(static_cast<unsigned char>(c2))) { unget_char(c); break; }
                 }
 
                 *s += c;

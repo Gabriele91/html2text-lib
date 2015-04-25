@@ -268,7 +268,7 @@ Area::utf_width()
     for (size_type yy = 0; yy < height_; yy++) {
       size_type r1 = 0;
       for (int i = width_ - 1; i >= 0; i--) {
-        if(!r1 && isspace(cells_[yy][i].character)) continue;
+        if(!r1 && isspace(static_cast<unsigned char>(cells_[yy][i].character))) continue;
         if((cells_[yy][i].character & 0xc0) != 0x80) r1++;
       }
       if(r < r1) r = r1;

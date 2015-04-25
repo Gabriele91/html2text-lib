@@ -381,12 +381,12 @@ replace_sgml_entities(string *s)
        * Some authors forget the ";", but we tolerate this.
        */
       c = s->at(j++);
-      if (isdigit(c)) {
+      if (isdigit(static_cast<unsigned char>(c))) {
         int x = c - '0';
         for (; j < l; ++j) {
           c = s->at(j);
           if (c == ';') { ++j; break; }
-          if (!isdigit(c)) break;
+          if (!isdigit(static_cast<unsigned char>(c))) break;
           x = 10 * x + c - '0';
         }
         if (USE_UTF8) {
@@ -408,7 +408,7 @@ replace_sgml_entities(string *s)
       }
     } else
 
-    if (isalpha(c)) {
+    if (isalpha(static_cast<unsigned char>(c))) {
 
       /*
        * Decode entities like "&nbsp;".
@@ -420,7 +420,7 @@ replace_sgml_entities(string *s)
       for (; j < l; ++j) {
         c = s->at(j);
         if (c == ';') { ++j; break; }
-        if (!isalnum(c)) break;
+        if (!isalnum(static_cast<unsigned char>(c))) break;
         if (i < sizeof(name) - 1) name[i++] = c;
       }
       name[i] = '\0';
