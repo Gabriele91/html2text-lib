@@ -2,7 +2,7 @@
 
 /*  A Bison parser, made from HTMLParser.y  */
 
-#line 1 "/usr/local/lib/bison.cc"
+//#line 1 "/usr/local/lib/bison.cc"
 /* -*-C-*-  Note some compilers choke on comments on `#line' lines.  */
 /* Skeleton output parser for bison,
    Copyright (C) 1984, 1989, 1990 Bob Corbett and Richard Stallman
@@ -73,10 +73,10 @@
 #include <stdio.h>
 #define YYBISON 1
 
-/* #line 70 "/usr/local/lib/bison.cc" */
+/* //#line 70 "/usr/local/lib/bison.cc" */
 #define YY_HTMLParser_PURE
 #define YY_HTMLParser_DEBUG  1
-#line 40 "HTMLParser.y"
+//#line 40 "HTMLParser.y"
 
 /* ------------------------------------------------------------------------- */
 
@@ -101,7 +101,7 @@
   int list_nesting;
 #define YY_HTMLParser_CONSTRUCTOR_INIT  : list_nesting(0)
 
-#line 69 "HTMLParser.y"
+//#line 69 "HTMLParser.y"
 typedef union {
     Document                   *document;
     Element                    *element;
@@ -128,7 +128,7 @@ typedef union {
 } yy_HTMLParser_stype;
 #define YY_HTMLParser_STYPE yy_HTMLParser_stype
 
-#line 70 "/usr/local/lib/bison.cc"
+//#line 70 "/usr/local/lib/bison.cc"
 /* %{ and %header{ and %union, during decl */
 #define YY_HTMLParser_BISON 1
 #ifndef YY_HTMLParser_COMPATIBILITY
@@ -165,31 +165,31 @@ typedef union {
 
 #ifndef YY_HTMLParser_PURE
 
-/* #line 105 "/usr/local/lib/bison.cc" */
+/* //#line 105 "/usr/local/lib/bison.cc" */
 
-#line 105 "/usr/local/lib/bison.cc"
+//#line 105 "/usr/local/lib/bison.cc"
 /*  YY_HTMLParser_PURE */
 #endif
 
 /* section apres lecture def, avant lecture grammaire S2 */
 
-/* #line 109 "/usr/local/lib/bison.cc" */
+/* //#line 109 "/usr/local/lib/bison.cc" */
 
-#line 109 "/usr/local/lib/bison.cc"
+//#line 109 "/usr/local/lib/bison.cc"
 /* prefix */
 #ifndef YY_HTMLParser_DEBUG
 
-/* #line 111 "/usr/local/lib/bison.cc" */
+/* //#line 111 "/usr/local/lib/bison.cc" */
 
-#line 111 "/usr/local/lib/bison.cc"
+//#line 111 "/usr/local/lib/bison.cc"
 /* YY_HTMLParser_DEBUG */
 #endif
 
 #ifndef YY_HTMLParser_LSP_NEEDED
 
-/* #line 116 "/usr/local/lib/bison.cc" */
+/* //#line 116 "/usr/local/lib/bison.cc" */
 
-#line 116 "/usr/local/lib/bison.cc"
+//#line 116 "/usr/local/lib/bison.cc"
 /* YY_HTMLParser_LSP_NEEDED*/
 #endif
 
@@ -295,7 +295,7 @@ Most programs should declare their own type anyway.  */
 #endif
 #endif
 
-/* #line 223 "/usr/local/lib/bison.cc" */
+/* //#line 223 "/usr/local/lib/bison.cc" */
 #define	DOCTYPE	258
 #define	PCDATA	259
 #define	SCAN_ERROR	260
@@ -425,7 +425,7 @@ Most programs should declare their own type anyway.  */
 #define	END_UL	384
 #define	END_VAR	385
 
-#line 223 "/usr/local/lib/bison.cc"
+//#line 223 "/usr/local/lib/bison.cc"
 /* #defines tokens */
 #else
 /* CLASS */
@@ -458,7 +458,7 @@ class YY_HTMLParser_CLASS YY_HTMLParser_INHERIT
 {
 public: /* static const int token ... */
 
-    /* #line 254 "/usr/local/lib/bison.cc" */
+    /* //#line 254 "/usr/local/lib/bison.cc" */
     static const int DOCTYPE;
     static const int PCDATA;
     static const int SCAN_ERROR;
@@ -588,7 +588,7 @@ public: /* static const int token ... */
     static const int END_UL;
     static const int END_VAR;
 
-#line 254 "/usr/local/lib/bison.cc"
+//#line 254 "/usr/local/lib/bison.cc"
     /* decl const */
 public:
     int YY_HTMLParser_PARSE(YY_HTMLParser_PARSE_PARAM);
@@ -618,7 +618,7 @@ public:
 };
 /* other declare folow */
 
-/* #line 282 "/usr/local/lib/bison.cc" */
+/* //#line 282 "/usr/local/lib/bison.cc" */
 const int YY_HTMLParser_CLASS::DOCTYPE = 258;
 const int YY_HTMLParser_CLASS::PCDATA = 259;
 const int YY_HTMLParser_CLASS::SCAN_ERROR = 260;
@@ -748,7 +748,7 @@ const int YY_HTMLParser_CLASS::END_U = 383;
 const int YY_HTMLParser_CLASS::END_UL = 384;
 const int YY_HTMLParser_CLASS::END_VAR = 385;
 
-#line 282 "/usr/local/lib/bison.cc"
+//#line 282 "/usr/local/lib/bison.cc"
 /* const YY_HTMLParser_CLASS::token */
 /*apres const  */
 YY_HTMLParser_CLASS::YY_HTMLParser_CLASS(YY_HTMLParser_CONSTRUCTOR_PARAM) YY_HTMLParser_CONSTRUCTOR_INIT
@@ -760,7 +760,7 @@ YY_HTMLParser_CLASS::YY_HTMLParser_CLASS(YY_HTMLParser_CONSTRUCTOR_PARAM) YY_HTM
 };
 #endif
 
-/* #line 292 "/usr/local/lib/bison.cc" */
+/* //#line 292 "/usr/local/lib/bison.cc" */
 
 #define	YYFINAL		286
 #define	YYFLAG		-32768
@@ -1547,7 +1547,7 @@ static const short yycheck[] = { 1,
 73
 };
 
-#line 292 "/usr/local/lib/bison.cc"
+//#line 292 "/usr/local/lib/bison.cc"
 /* fattrs + tables */
 
 /* parser code folow  */
@@ -1948,94 +1948,94 @@ yyreduce:
     }
 #endif
 
-    /* #line 697 "/usr/local/lib/bison.cc" */
+    /* //#line 697 "/usr/local/lib/bison.cc" */
 
     switch (yyn) {
     case 1:
-#line 274 "HTMLParser.y"
+//#line 274 "HTMLParser.y"
     {
         process(*yyvsp[0].document);
         delete yyvsp[0].document;
         ;
         break; }
     case 2:
-#line 305 "HTMLParser.y"
+//#line 305 "HTMLParser.y"
     {
         yyval.document = new Document;
         yyval.document->body.content.reset(new list<auto_ptr<Element> >);
         ;
         break; }
     case 3:
-#line 309 "HTMLParser.y"
+//#line 309 "HTMLParser.y"
     {
         yyval.document = yyvsp[-1].document;
         ;
         break; }
     case 4:
-#line 312 "HTMLParser.y"
+//#line 312 "HTMLParser.y"
     {
         yyval.document = yyvsp[-1].document;
         ;
         break; }
     case 5:
-#line 315 "HTMLParser.y"
+//#line 315 "HTMLParser.y"
     {
         yyval.document->attributes.reset(yyvsp[0].tag_attributes);
         yyval.document = yyvsp[-1].document;
         ;
         break; }
     case 6:
-#line 319 "HTMLParser.y"
+//#line 319 "HTMLParser.y"
     {
         yyval.document = yyvsp[-1].document;
         ;
         break; }
     case 7:
-#line 322 "HTMLParser.y"
+//#line 322 "HTMLParser.y"
     {
         delete yyvsp[0].tag_attributes;
         yyval.document = yyvsp[-1].document;
         ;
         break; }
     case 8:
-#line 326 "HTMLParser.y"
+//#line 326 "HTMLParser.y"
     {
         yyval.document = yyvsp[-1].document;
         ;
         break; }
     case 9:
-#line 329 "HTMLParser.y"
+//#line 329 "HTMLParser.y"
     {
         delete yyvsp[-2].tag_attributes; // Ignore <TITLE> attributes
         (yyval.document = yyvsp[-3].document)->head.title.reset(yyvsp[-1].pcdata);
         ;
         break; }
     case 10:
-#line 333 "HTMLParser.y"
+//#line 333 "HTMLParser.y"
     {
         (yyval.document = yyvsp[-1].document)->head.isindex_attributes.reset(yyvsp[0].tag_attributes);
         ;
         break; }
     case 11:
-#line 336 "HTMLParser.y"
+//#line 336 "HTMLParser.y"
     {
         (yyval.document = yyvsp[-1].document)->head.base_attributes.reset(yyvsp[0].tag_attributes);
         ;
         break; }
     case 12:
-#line 339 "HTMLParser.y"
+//#line 339 "HTMLParser.y"
     {
         (yyval.document = yyvsp[-1].document)->head.meta_attributes.reset(yyvsp[0].tag_attributes);
         ;
         break; }
     case 13:
-#line 342 "HTMLParser.y"
+//#line 342 "HTMLParser.y"
     {
         (yyval.document = yyvsp[-1].document)->head.link_attributes.reset(yyvsp[0].tag_attributes);
         ;
         break; }
     case 14:
-#line 345 "HTMLParser.y"
+//#line 345 "HTMLParser.y"
     {
         auto_ptr<Script> s(new Script);
         s->attributes.reset(yyvsp[0].tag_attributes);
@@ -2046,7 +2046,7 @@ yyreduce:
         ;
         break; }
     case 15:
-#line 353 "HTMLParser.y"
+//#line 353 "HTMLParser.y"
     {
         auto_ptr<Style> s(new Style);
         s->attributes.reset(yyvsp[0].tag_attributes);
@@ -2057,20 +2057,20 @@ yyreduce:
         ;
         break; }
     case 16:
-#line 361 "HTMLParser.y"
+//#line 361 "HTMLParser.y"
     {
         delete yyvsp[0].tag_attributes;
         yyval.document = yyvsp[-1].document;
         ;
         break; }
     case 17:
-#line 365 "HTMLParser.y"
+//#line 365 "HTMLParser.y"
     {
         yyval.document = yyvsp[-1].document;
         ;
         break; }
     case 18:
-#line 368 "HTMLParser.y"
+//#line 368 "HTMLParser.y"
     {
         Paragraph *p = new Paragraph;
         p->texts.reset(yyvsp[0].element_list);
@@ -2078,25 +2078,25 @@ yyreduce:
         ;
         break; }
     case 19:
-#line 373 "HTMLParser.y"
+//#line 373 "HTMLParser.y"
     {
         (yyval.document = yyvsp[-1].document)->body.content->push_back(auto_ptr<Element>(yyvsp[0].heading));
         ;
         break; }
     case 20:
-#line 376 "HTMLParser.y"
+//#line 376 "HTMLParser.y"
     {
         (yyval.document = yyvsp[-1].document)->body.content->push_back(auto_ptr<Element>(yyvsp[0].element));
         ;
         break; }
     case 21:
-#line 379 "HTMLParser.y"
+//#line 379 "HTMLParser.y"
     {
         (yyval.document = yyvsp[-1].document)->body.content->push_back(auto_ptr<Element>(yyvsp[0].address));
         ;
         break; }
     case 22:
-#line 385 "HTMLParser.y"
+//#line 385 "HTMLParser.y"
     {
         yyval.pcdata = new PCData;
         yyval.pcdata->text = *yyvsp[0].strinG;
@@ -2104,19 +2104,19 @@ yyreduce:
         ;
         break; }
     case 23:
-#line 393 "HTMLParser.y"
+//#line 393 "HTMLParser.y"
     {
         yyval.element_list = new list<auto_ptr<Element> >;
         ;
         break; }
     case 24:
-#line 396 "HTMLParser.y"
+//#line 396 "HTMLParser.y"
     {
         yyval.element_list = yyvsp[-1].element_list;
         ;
         break; }
     case 25:
-#line 399 "HTMLParser.y"
+//#line 399 "HTMLParser.y"
     {
         auto_ptr<Script> s(new Script);
         s->attributes.reset(yyvsp[0].tag_attributes);
@@ -2127,7 +2127,7 @@ yyreduce:
         ;
         break; }
     case 26:
-#line 407 "HTMLParser.y"
+//#line 407 "HTMLParser.y"
     {
         auto_ptr<Style> s(new Style);
         s->attributes.reset(yyvsp[0].tag_attributes);
@@ -2138,7 +2138,7 @@ yyreduce:
         ;
         break; }
     case 27:
-#line 415 "HTMLParser.y"
+//#line 415 "HTMLParser.y"
     {
         Paragraph *p = new Paragraph;
         p->texts = auto_ptr<list<auto_ptr<Element> > >(yyvsp[0].element_list);
@@ -2146,25 +2146,25 @@ yyreduce:
         ;
         break; }
     case 28:
-#line 420 "HTMLParser.y"
+//#line 420 "HTMLParser.y"
     {
         (yyval.element_list = yyvsp[-1].element_list)->push_back(auto_ptr<Element>(yyvsp[0].heading));
         ;
         break; }
     case 29:
-#line 423 "HTMLParser.y"
+//#line 423 "HTMLParser.y"
     {
         (yyval.element_list = yyvsp[-1].element_list)->push_back(auto_ptr<Element>(yyvsp[0].element));
         ;
         break; }
     case 30:
-#line 426 "HTMLParser.y"
+//#line 426 "HTMLParser.y"
     {
         (yyval.element_list = yyvsp[-1].element_list)->push_back(auto_ptr<Element>(yyvsp[0].address));
         ;
         break; }
     case 31:
-#line 432 "HTMLParser.y"
+//#line 432 "HTMLParser.y"
     {
         /* EXTENSION: Allow paragraph content in heading, not only texts */
         if (yyvsp[-2].heading->level != yyvsp[0].inT) {
@@ -2175,13 +2175,13 @@ yyreduce:
         ;
         break; }
     case 32:
-#line 443 "HTMLParser.y"
+//#line 443 "HTMLParser.y"
     {
         yyval.element = yyvsp[0].element;
         ;
         break; }
     case 33:
-#line 446 "HTMLParser.y"
+//#line 446 "HTMLParser.y"
     {
         Paragraph *p = new Paragraph;
         p->attributes.reset(yyvsp[-2].tag_attributes);
@@ -2190,19 +2190,19 @@ yyreduce:
         ;
         break; }
     case 34:
-#line 455 "HTMLParser.y"
+//#line 455 "HTMLParser.y"
     {
         yyval.element_list = new list<auto_ptr<Element> >;
         ;
         break; }
     case 35:
-#line 458 "HTMLParser.y"
+//#line 458 "HTMLParser.y"
     {
         yyval.element_list = yyvsp[-1].element_list;
         ;
         break; }
     case 36:
-#line 461 "HTMLParser.y"
+//#line 461 "HTMLParser.y"
     {
         yyval.element_list = yyvsp[-1].element_list;
         yyval.element_list->splice(yyval.element_list->end(), *yyvsp[0].element_list);
@@ -2210,31 +2210,31 @@ yyreduce:
         ;
         break; }
     case 37:
-#line 466 "HTMLParser.y"
+//#line 466 "HTMLParser.y"
     {
         (yyval.element_list = yyvsp[-1].element_list)->push_back(auto_ptr<Element>(yyvsp[0].element));
         ;
         break; }
     case 38:
-#line 472 "HTMLParser.y"
+//#line 472 "HTMLParser.y"
     {
         yyval.element = yyvsp[0].element;
         ;
         break; }
     case 39:
-#line 475 "HTMLParser.y"
+//#line 475 "HTMLParser.y"
     {
         yyval.element = yyvsp[0].preformatted;
         ;
         break; }
     case 40:
-#line 478 "HTMLParser.y"
+//#line 478 "HTMLParser.y"
     {
         yyval.element = yyvsp[0].definition_list;
         ;
         break; }
     case 41:
-#line 481 "HTMLParser.y"
+//#line 481 "HTMLParser.y"
     {
         Division *p = new Division;
         p->attributes.reset(yyvsp[-2].tag_attributes);
@@ -2243,7 +2243,7 @@ yyreduce:
         ;
         break; }
     case 42:
-#line 487 "HTMLParser.y"
+//#line 487 "HTMLParser.y"
     {
         Center *p = new Center;
         delete yyvsp[-2].tag_attributes;       // CENTER has no attributes.
@@ -2252,7 +2252,7 @@ yyreduce:
         ;
         break; }
     case 43:
-#line 493 "HTMLParser.y"
+//#line 493 "HTMLParser.y"
     {
         delete yyvsp[-2].tag_attributes; // BLOCKQUOTE has no attributes!
         BlockQuote *bq = new BlockQuote;
@@ -2261,7 +2261,7 @@ yyreduce:
         ;
         break; }
     case 44:
-#line 499 "HTMLParser.y"
+//#line 499 "HTMLParser.y"
     {
         Form *f = new Form;
         f->attributes.reset(yyvsp[-2].tag_attributes);
@@ -2270,7 +2270,7 @@ yyreduce:
         ;
         break; }
     case 45:
-#line 505 "HTMLParser.y"
+//#line 505 "HTMLParser.y"
     {
         HorizontalRule *h = new HorizontalRule;
         h->attributes.reset(yyvsp[0].tag_attributes);
@@ -2278,7 +2278,7 @@ yyreduce:
         ;
         break; }
     case 46:
-#line 510 "HTMLParser.y"
+//#line 510 "HTMLParser.y"
     {
         Table *t = new Table;
         t->attributes.reset(yyvsp[-3].tag_attributes);
@@ -2288,11 +2288,11 @@ yyreduce:
         ;
         break; }
     case 47:
-#line 520 "HTMLParser.y"
+//#line 520 "HTMLParser.y"
     { ++list_nesting;;
     break; }
     case 48:
-#line 520 "HTMLParser.y"
+//#line 520 "HTMLParser.y"
     {
         OrderedList *ol = new OrderedList;
         ol->attributes.reset(yyvsp[-3].tag_attributes);
@@ -2302,11 +2302,11 @@ yyreduce:
         ;
         break; }
     case 49:
-#line 527 "HTMLParser.y"
+//#line 527 "HTMLParser.y"
     { ++list_nesting;;
     break; }
     case 50:
-#line 527 "HTMLParser.y"
+//#line 527 "HTMLParser.y"
     {
         UnorderedList *ul = new UnorderedList;
         ul->attributes.reset(yyvsp[-3].tag_attributes);
@@ -2316,11 +2316,11 @@ yyreduce:
         ;
         break; }
     case 51:
-#line 534 "HTMLParser.y"
+//#line 534 "HTMLParser.y"
     { ++list_nesting;;
     break; }
     case 52:
-#line 534 "HTMLParser.y"
+//#line 534 "HTMLParser.y"
     {
         Dir *d = new Dir;
         d->attributes.reset(yyvsp[-3].tag_attributes);
@@ -2330,11 +2330,11 @@ yyreduce:
         ;
         break; }
     case 53:
-#line 541 "HTMLParser.y"
+//#line 541 "HTMLParser.y"
     { ++list_nesting;;
     break; }
     case 54:
-#line 541 "HTMLParser.y"
+//#line 541 "HTMLParser.y"
     {
         Menu *m = new Menu;
         m->attributes.reset(yyvsp[-3].tag_attributes);
@@ -2344,26 +2344,26 @@ yyreduce:
         ;
         break; }
     case 55:
-#line 551 "HTMLParser.y"
+//#line 551 "HTMLParser.y"
     {
         yyval.list_items = 0;
         ;
         break; }
     case 56:
-#line 554 "HTMLParser.y"
+//#line 554 "HTMLParser.y"
     {
         yyval.list_items = yyvsp[-1].list_items;
         ;
         break; }
     case 57:
-#line 557 "HTMLParser.y"
+//#line 557 "HTMLParser.y"
     {
         yyval.list_items = yyvsp[-1].list_items ? yyvsp[-1].list_items : new list<auto_ptr<ListItem> >;
         yyval.list_items->push_back(auto_ptr<ListItem>(yyvsp[0].list_item));
         ;
         break; }
     case 58:
-#line 564 "HTMLParser.y"
+//#line 564 "HTMLParser.y"
     {
         ListNormalItem *lni = new ListNormalItem;
         lni->attributes.reset(yyvsp[-2].tag_attributes);
@@ -2372,7 +2372,7 @@ yyreduce:
         ;
         break; }
     case 59:
-#line 570 "HTMLParser.y"
+//#line 570 "HTMLParser.y"
     {   /* EXTENSION: Handle a "block" in a list as an indented block. */
         ListBlockItem *lbi = new ListBlockItem;
         lbi->block.reset(yyvsp[0].element);
@@ -2380,7 +2380,7 @@ yyreduce:
         ;
         break; }
     case 60:
-#line 575 "HTMLParser.y"
+//#line 575 "HTMLParser.y"
     {              /* EXTENSION: Treat "texts" in a list as an "<LI>". */
         ListNormalItem *lni = new ListNormalItem;
         lni->flow.reset(yyvsp[0].element_list);
@@ -2388,7 +2388,7 @@ yyreduce:
         ;
         break; }
     case 61:
-#line 585 "HTMLParser.y"
+//#line 585 "HTMLParser.y"
     {
         delete yyvsp[-4].tag_attributes;
         delete yyvsp[-3].element_list; /* Kludge */
@@ -2396,7 +2396,7 @@ yyreduce:
         ;
         break; }
     case 62:
-#line 591 "HTMLParser.y"
+//#line 591 "HTMLParser.y"
     {
         DefinitionList *dl = new DefinitionList;
         dl->attributes.reset(yyvsp[-4].tag_attributes);
@@ -2406,33 +2406,33 @@ yyreduce:
         ;
         break; }
     case 63:
-#line 601 "HTMLParser.y"
+//#line 601 "HTMLParser.y"
     {
         yyval.definition_list_item_list = 0;
         ;
         break; }
     case 64:
-#line 604 "HTMLParser.y"
+//#line 604 "HTMLParser.y"
     {
         yyval.definition_list_item_list = yyvsp[0].definition_list_item_list;
         ;
         break; }
     case 65:
-#line 607 "HTMLParser.y"
+//#line 607 "HTMLParser.y"
     {
         yyval.definition_list_item_list = yyvsp[-1].definition_list_item_list ? yyvsp[-1].definition_list_item_list : new list<auto_ptr<DefinitionListItem> >;
         yyval.definition_list_item_list->push_back(auto_ptr<DefinitionListItem>(yyvsp[0].term_name));
         ;
         break; }
     case 66:
-#line 611 "HTMLParser.y"
+//#line 611 "HTMLParser.y"
     {
         yyval.definition_list_item_list = yyvsp[-1].definition_list_item_list ? yyvsp[-1].definition_list_item_list : new list<auto_ptr<DefinitionListItem> >;
         yyval.definition_list_item_list->push_back(auto_ptr<DefinitionListItem>(yyvsp[0].term_definition));
         ;
         break; }
     case 67:
-#line 618 "HTMLParser.y"
+//#line 618 "HTMLParser.y"
     {      /* EXTENSION: Allow "flow" instead of "texts" */
         delete yyvsp[-2].tag_attributes;
         yyval.term_name = new TermName;
@@ -2440,7 +2440,7 @@ yyreduce:
         ;
         break; }
     case 68:
-#line 623 "HTMLParser.y"
+//#line 623 "HTMLParser.y"
     {/* EXTENSION: Ignore <P> after </DT> */
         delete yyvsp[-4].tag_attributes;
         delete yyvsp[-1].tag_attributes;
@@ -2449,7 +2449,7 @@ yyreduce:
         ;
         break; }
     case 69:
-#line 632 "HTMLParser.y"
+//#line 632 "HTMLParser.y"
     {
         delete yyvsp[-2].tag_attributes;
         yyval.term_definition = new TermDefinition;
@@ -2457,7 +2457,7 @@ yyreduce:
         ;
         break; }
     case 70:
-#line 637 "HTMLParser.y"
+//#line 637 "HTMLParser.y"
     {/* EXTENSION: Ignore <P> after </DD> */
         delete yyvsp[-4].tag_attributes;
         delete yyvsp[-1].tag_attributes;
@@ -2466,44 +2466,44 @@ yyreduce:
         ;
         break; }
     case 71:
-#line 646 "HTMLParser.y"
+//#line 646 "HTMLParser.y"
     {
         yyval.element_list = new list<auto_ptr<Element> >;
         yyval.element_list->push_back(auto_ptr<Element>(yyvsp[0].element));
         ;
         break; }
     case 72:
-#line 650 "HTMLParser.y"
+//#line 650 "HTMLParser.y"
     {
         yyval.element_list = yyvsp[-1].element_list;
         ;
         break; }
     case 73:
-#line 653 "HTMLParser.y"
+//#line 653 "HTMLParser.y"
     {
         (yyval.element_list = yyvsp[-1].element_list)->push_back(auto_ptr<Element>(yyvsp[0].element));
         ;
         break; }
     case 74:
-#line 659 "HTMLParser.y"
+//#line 659 "HTMLParser.y"
     {
         yyval.element = yyvsp[0].element;
         ;
         break; }
     case 75:
-#line 662 "HTMLParser.y"
+//#line 662 "HTMLParser.y"
     {          /* EXTENSION: Allow headings in "flow", i.e. in lists */
         yyval.element = yyvsp[0].heading;
         ;
         break; }
     case 76:
-#line 665 "HTMLParser.y"
+//#line 665 "HTMLParser.y"
     {
         yyval.element = yyvsp[0].element;
         ;
         break; }
     case 77:
-#line 671 "HTMLParser.y"
+//#line 671 "HTMLParser.y"
     {
         yyval.preformatted = new Preformatted;
         yyval.preformatted->attributes.reset(yyvsp[-2].tag_attributes);
@@ -2511,7 +2511,7 @@ yyreduce:
         ;
         break; }
     case 78:
-#line 679 "HTMLParser.y"
+//#line 679 "HTMLParser.y"
     {
         yyval.caption = new Caption;
         yyval.caption->attributes.reset(yyvsp[-2].tag_attributes);
@@ -2519,19 +2519,19 @@ yyreduce:
         ;
         break; }
     case 79:
-#line 687 "HTMLParser.y"
+//#line 687 "HTMLParser.y"
     {
         yyval.table_rows = new list<auto_ptr<TableRow> >;
         ;
         break; }
     case 80:
-#line 690 "HTMLParser.y"
+//#line 690 "HTMLParser.y"
     {
         yyval.table_rows = yyvsp[-1].table_rows;
         ;
         break; }
     case 81:
-#line 693 "HTMLParser.y"
+//#line 693 "HTMLParser.y"
     {
         TableRow *tr = new TableRow;
         tr->attributes.reset(yyvsp[-2].tag_attributes);
@@ -2540,19 +2540,19 @@ yyreduce:
         ;
         break; }
     case 82:
-#line 702 "HTMLParser.y"
+//#line 702 "HTMLParser.y"
     {
         yyval.table_cells = new list<auto_ptr<TableCell> >;
         ;
         break; }
     case 83:
-#line 705 "HTMLParser.y"
+//#line 705 "HTMLParser.y"
     {
         yyval.table_cells = yyvsp[-1].table_cells;
         ;
         break; }
     case 84:
-#line 708 "HTMLParser.y"
+//#line 708 "HTMLParser.y"
     {
         TableCell *tc = new TableCell;
         tc->attributes.reset(yyvsp[-2].tag_attributes);
@@ -2561,7 +2561,7 @@ yyreduce:
         ;
         break; }
     case 85:
-#line 714 "HTMLParser.y"
+//#line 714 "HTMLParser.y"
     {
         /* EXTENSION: Allow "</TD>" in place of "</TH>". */
         TableHeadingCell *thc = new TableHeadingCell;
@@ -2571,14 +2571,14 @@ yyreduce:
         ;
         break; }
     case 86:
-#line 721 "HTMLParser.y"
+//#line 721 "HTMLParser.y"
     {    /* EXTENSION: Ignore <INPUT> between table cells. */
         delete yyvsp[0].tag_attributes;
         yyval.table_cells = yyvsp[-1].table_cells;
         ;
         break; }
     case 87:
-#line 728 "HTMLParser.y"
+//#line 728 "HTMLParser.y"
     { /* Should be "address_content"... */
         delete yyvsp[-2].tag_attributes;
         yyval.address = new Address;
@@ -2586,40 +2586,40 @@ yyreduce:
         ;
         break; }
     case 88:
-#line 738 "HTMLParser.y"
+//#line 738 "HTMLParser.y"
     {
         yyval.element_list = new list<auto_ptr<Element> >;
         yyval.element_list->push_back(auto_ptr<Element>(yyvsp[0].element));
         ;
         break; }
     case 89:
-#line 742 "HTMLParser.y"
+//#line 742 "HTMLParser.y"
     {
         (yyval.element_list = yyvsp[-1].element_list)->push_back(auto_ptr<Element>(yyvsp[0].element));
         ;
         break; }
     case 90:
-#line 748 "HTMLParser.y"
+//#line 748 "HTMLParser.y"
     { yyval.element = yyvsp[-1].pcdata;;
     break; }
     case 91:
-#line 749 "HTMLParser.y"
+//#line 749 "HTMLParser.y"
     { yyval.element = yyvsp[-1].element;;
     break; }
     case 92:
-#line 750 "HTMLParser.y"
+//#line 750 "HTMLParser.y"
     { yyval.element = yyvsp[-1].element;;
     break; }
     case 93:
-#line 751 "HTMLParser.y"
+//#line 751 "HTMLParser.y"
     { yyval.element = yyvsp[-1].element;;
     break; }
     case 94:
-#line 752 "HTMLParser.y"
+//#line 752 "HTMLParser.y"
     { yyval.element = yyvsp[-1].element;;
     break; }
     case 95:
-#line 753 "HTMLParser.y"
+//#line 753 "HTMLParser.y"
     { /* EXTENSION: NS 1.1 / IE 2.0 */
         NoBreak *nb = new NoBreak;
         delete yyvsp[-3].tag_attributes;
@@ -2628,75 +2628,75 @@ yyreduce:
         ;
         break; }
     case 96:
-#line 762 "HTMLParser.y"
+//#line 762 "HTMLParser.y"
     { delete yyvsp[-2].tag_attributes; yyval.element = new Font(TT, yyvsp[-1].element_list);;
     break; }
     case 97:
-#line 763 "HTMLParser.y"
+//#line 763 "HTMLParser.y"
     { delete yyvsp[-2].tag_attributes; yyval.element = new Font(I, yyvsp[-1].element_list);;
     break; }
     case 98:
-#line 764 "HTMLParser.y"
+//#line 764 "HTMLParser.y"
     { delete yyvsp[-2].tag_attributes; yyval.element = new Font(B, yyvsp[-1].element_list);;
     break; }
     case 99:
-#line 765 "HTMLParser.y"
+//#line 765 "HTMLParser.y"
     { delete yyvsp[-2].tag_attributes; yyval.element = new Font(U, yyvsp[-1].element_list);;
     break; }
     case 100:
-#line 766 "HTMLParser.y"
+//#line 766 "HTMLParser.y"
     { delete yyvsp[-2].tag_attributes; yyval.element = new Font(STRIKE, yyvsp[-1].element_list);;
     break; }
     case 101:
-#line 767 "HTMLParser.y"
+//#line 767 "HTMLParser.y"
     { delete yyvsp[-2].tag_attributes; yyval.element = new Font(BIG, yyvsp[-1].element_list);;
     break; }
     case 102:
-#line 768 "HTMLParser.y"
+//#line 768 "HTMLParser.y"
     { delete yyvsp[-2].tag_attributes; yyval.element = new Font(SMALL, yyvsp[-1].element_list);;
     break; }
     case 103:
-#line 769 "HTMLParser.y"
+//#line 769 "HTMLParser.y"
     { delete yyvsp[-2].tag_attributes; yyval.element = new Font(SUB, yyvsp[-1].element_list);;
     break; }
     case 104:
-#line 770 "HTMLParser.y"
+//#line 770 "HTMLParser.y"
     { delete yyvsp[-2].tag_attributes; yyval.element = new Font(SUP, yyvsp[-1].element_list);;
     break; }
     case 105:
-#line 774 "HTMLParser.y"
+//#line 774 "HTMLParser.y"
     { delete yyvsp[-2].tag_attributes; yyval.element = new Phrase(EM, yyvsp[-1].element_list);;
     break; }
     case 106:
-#line 775 "HTMLParser.y"
+//#line 775 "HTMLParser.y"
     { delete yyvsp[-2].tag_attributes; yyval.element = new Phrase(STRONG, yyvsp[-1].element_list);;
     break; }
     case 107:
-#line 776 "HTMLParser.y"
+//#line 776 "HTMLParser.y"
     { delete yyvsp[-2].tag_attributes; yyval.element = new Phrase(DFN, yyvsp[-1].element_list);;
     break; }
     case 108:
-#line 777 "HTMLParser.y"
+//#line 777 "HTMLParser.y"
     { delete yyvsp[-2].tag_attributes; yyval.element = new Phrase(CODE, yyvsp[-1].element_list);;
     break; }
     case 109:
-#line 778 "HTMLParser.y"
+//#line 778 "HTMLParser.y"
     { delete yyvsp[-2].tag_attributes; yyval.element = new Phrase(SAMP, yyvsp[-1].element_list);;
     break; }
     case 110:
-#line 779 "HTMLParser.y"
+//#line 779 "HTMLParser.y"
     { delete yyvsp[-2].tag_attributes; yyval.element = new Phrase(KBD, yyvsp[-1].element_list);;
     break; }
     case 111:
-#line 780 "HTMLParser.y"
+//#line 780 "HTMLParser.y"
     { delete yyvsp[-2].tag_attributes; yyval.element = new Phrase(VAR, yyvsp[-1].element_list);;
     break; }
     case 112:
-#line 781 "HTMLParser.y"
+//#line 781 "HTMLParser.y"
     { delete yyvsp[-2].tag_attributes; yyval.element = new Phrase(CITE, yyvsp[-1].element_list);;
     break; }
     case 113:
-#line 788 "HTMLParser.y"
+//#line 788 "HTMLParser.y"
     {
         delete yyvsp[-2].tag_attributes;
         Anchor *a = new Anchor;
@@ -2706,7 +2706,7 @@ yyreduce:
         ;
         break; }
     case 114:
-#line 795 "HTMLParser.y"
+//#line 795 "HTMLParser.y"
     {
         Image *i = new Image;
         i->attributes.reset(yyvsp[0].tag_attributes);
@@ -2714,7 +2714,7 @@ yyreduce:
         ;
         break; }
     case 115:
-#line 800 "HTMLParser.y"
+//#line 800 "HTMLParser.y"
     {
         Applet *a = new Applet;
         a->attributes.reset(yyvsp[-2].tag_attributes);
@@ -2723,7 +2723,7 @@ yyreduce:
         ;
         break; }
     case 116:
-#line 808 "HTMLParser.y"
+//#line 808 "HTMLParser.y"
     {
         Font2 *f2 = new Font2;
         f2->attributes.reset(yyvsp[-2].tag_attributes);
@@ -2732,7 +2732,7 @@ yyreduce:
         ;
         break; }
     case 117:
-#line 814 "HTMLParser.y"
+//#line 814 "HTMLParser.y"
     {
         BaseFont *bf = new BaseFont;
         bf->attributes.reset(yyvsp[0].tag_attributes);
@@ -2740,7 +2740,7 @@ yyreduce:
         ;
         break; }
     case 118:
-#line 819 "HTMLParser.y"
+//#line 819 "HTMLParser.y"
     {
         LineBreak *lb = new LineBreak;
         lb->attributes.reset(yyvsp[0].tag_attributes);
@@ -2748,7 +2748,7 @@ yyreduce:
         ;
         break; }
     case 119:
-#line 824 "HTMLParser.y"
+//#line 824 "HTMLParser.y"
     {
         Map *m = new Map;
         m->attributes.reset(yyvsp[-2].tag_attributes);
@@ -2757,20 +2757,20 @@ yyreduce:
         ;
         break; }
     case 120:
-#line 833 "HTMLParser.y"
+//#line 833 "HTMLParser.y"
     {
         yyval.element_list = 0;
         ;
         break; }
     case 121:
-#line 836 "HTMLParser.y"
+//#line 836 "HTMLParser.y"
     {
         yyval.element_list = yyvsp[-1].element_list ? yyvsp[-1].element_list : new list<auto_ptr<Element> >;
         yyval.element_list->push_back(auto_ptr<Element>(yyvsp[0].element));
         ;
         break; }
     case 122:
-#line 840 "HTMLParser.y"
+//#line 840 "HTMLParser.y"
     {
         yyval.element_list = yyvsp[-1].element_list ? yyvsp[-1].element_list : new list<auto_ptr<Element> >;
         Param *p = new Param;
@@ -2779,26 +2779,26 @@ yyreduce:
         ;
         break; }
     case 123:
-#line 849 "HTMLParser.y"
+//#line 849 "HTMLParser.y"
     {
         yyval.tag_attributes_list = 0;
         ;
         break; }
     case 124:
-#line 852 "HTMLParser.y"
+//#line 852 "HTMLParser.y"
     {
         yyval.tag_attributes_list = yyvsp[-1].tag_attributes_list;
         ;
         break; }
     case 125:
-#line 855 "HTMLParser.y"
+//#line 855 "HTMLParser.y"
     {
         yyval.tag_attributes_list = yyvsp[-1].tag_attributes_list ? yyvsp[-1].tag_attributes_list : new list<auto_ptr<list<TagAttribute> > >;
         yyval.tag_attributes_list->push_back(auto_ptr<list<TagAttribute> >(yyvsp[0].tag_attributes));
         ;
         break; }
     case 126:
-#line 862 "HTMLParser.y"
+//#line 862 "HTMLParser.y"
     {
         Input *i = new Input;
         i->attributes.reset(yyvsp[0].tag_attributes);
@@ -2806,7 +2806,7 @@ yyreduce:
         ;
         break; }
     case 127:
-#line 867 "HTMLParser.y"
+//#line 867 "HTMLParser.y"
     {
         Select *s = new Select;
         s->attributes.reset(yyvsp[-2].tag_attributes);
@@ -2815,7 +2815,7 @@ yyreduce:
         ;
         break; }
     case 128:
-#line 873 "HTMLParser.y"
+//#line 873 "HTMLParser.y"
     {
         TextArea *ta = new TextArea;
         ta->attributes.reset(yyvsp[-2].tag_attributes);
@@ -2824,20 +2824,20 @@ yyreduce:
         ;
         break; }
     case 129:
-#line 882 "HTMLParser.y"
+//#line 882 "HTMLParser.y"
     {
         yyval.option_list = new list<auto_ptr<Option> >;
         yyval.option_list->push_back(auto_ptr<Option>(yyvsp[0].option));
         ;
         break; }
     case 130:
-#line 886 "HTMLParser.y"
+//#line 886 "HTMLParser.y"
     {
         (yyval.option_list = yyvsp[-1].option_list)->push_back(auto_ptr<Option>(yyvsp[0].option));
         ;
         break; }
     case 131:
-#line 892 "HTMLParser.y"
+//#line 892 "HTMLParser.y"
     {
         yyval.option = new Option;
         yyval.option->attributes.reset(yyvsp[-2].tag_attributes);
@@ -2845,104 +2845,104 @@ yyreduce:
         ;
         break; }
     case 132:
-#line 902 "HTMLParser.y"
+//#line 902 "HTMLParser.y"
     { yyval.heading = new Heading; yyval.heading->level = 1; yyval.heading->attributes.reset(yyvsp[0].tag_attributes);;
     break; }
     case 133:
-#line 903 "HTMLParser.y"
+//#line 903 "HTMLParser.y"
     { yyval.heading = new Heading; yyval.heading->level = 2; yyval.heading->attributes.reset(yyvsp[0].tag_attributes);;
     break; }
     case 134:
-#line 904 "HTMLParser.y"
+//#line 904 "HTMLParser.y"
     { yyval.heading = new Heading; yyval.heading->level = 3; yyval.heading->attributes.reset(yyvsp[0].tag_attributes);;
     break; }
     case 135:
-#line 905 "HTMLParser.y"
+//#line 905 "HTMLParser.y"
     { yyval.heading = new Heading; yyval.heading->level = 4; yyval.heading->attributes.reset(yyvsp[0].tag_attributes);;
     break; }
     case 136:
-#line 906 "HTMLParser.y"
+//#line 906 "HTMLParser.y"
     { yyval.heading = new Heading; yyval.heading->level = 5; yyval.heading->attributes.reset(yyvsp[0].tag_attributes);;
     break; }
     case 137:
-#line 907 "HTMLParser.y"
+//#line 907 "HTMLParser.y"
     { yyval.heading = new Heading; yyval.heading->level = 6; yyval.heading->attributes.reset(yyvsp[0].tag_attributes);;
     break; }
     case 138:
-#line 911 "HTMLParser.y"
+//#line 911 "HTMLParser.y"
     { yyval.inT = 1;;
     break; }
     case 139:
-#line 912 "HTMLParser.y"
+//#line 912 "HTMLParser.y"
     { yyval.inT = 2;;
     break; }
     case 140:
-#line 913 "HTMLParser.y"
+//#line 913 "HTMLParser.y"
     { yyval.inT = 3;;
     break; }
     case 141:
-#line 914 "HTMLParser.y"
+//#line 914 "HTMLParser.y"
     { yyval.inT = 4;;
     break; }
     case 142:
-#line 915 "HTMLParser.y"
+//#line 915 "HTMLParser.y"
     { yyval.inT = 5;;
     break; }
     case 143:
-#line 916 "HTMLParser.y"
+//#line 916 "HTMLParser.y"
     { yyval.inT = 6;;
     break; }
     case 144:
-#line 921 "HTMLParser.y"
+//#line 921 "HTMLParser.y"
     { yyval.pcdata = 0;;
     break; }
     case 145:
-#line 921 "HTMLParser.y"
+//#line 921 "HTMLParser.y"
     { yyval.pcdata = yyvsp[0].pcdata;;
     break; }
     case 146:
-#line 922 "HTMLParser.y"
+//#line 922 "HTMLParser.y"
     { yyval.caption = 0;;
     break; }
     case 147:
-#line 922 "HTMLParser.y"
+//#line 922 "HTMLParser.y"
     { yyval.caption = yyvsp[0].caption;;
     break; }
     case 148:
-#line 923 "HTMLParser.y"
+//#line 923 "HTMLParser.y"
     { yyval.element_list = 0;;
     break; }
     case 149:
-#line 923 "HTMLParser.y"
+//#line 923 "HTMLParser.y"
     { yyval.element_list = yyvsp[0].element_list;;
     break; }
     case 150:
-#line 924 "HTMLParser.y"
+//#line 924 "HTMLParser.y"
     { yyval.element_list = 0;;
     break; }
     case 151:
-#line 924 "HTMLParser.y"
+//#line 924 "HTMLParser.y"
     { yyval.element_list = yyvsp[0].element_list;;
     break; }
     case 152:
-#line 926 "HTMLParser.y"
+//#line 926 "HTMLParser.y"
     { yyval.tag_attributes = 0;;
     break; }
     case 153:
-#line 926 "HTMLParser.y"
+//#line 926 "HTMLParser.y"
     { yyval.tag_attributes = yyvsp[0].tag_attributes;;
     break; }
     case 154:
-#line 927 "HTMLParser.y"
+//#line 927 "HTMLParser.y"
     { yyval.tag_attributes = 0;;
     break; }
     case 155:
-#line 927 "HTMLParser.y"
+//#line 927 "HTMLParser.y"
     { yyval.tag_attributes = yyvsp[0].tag_attributes;;
     break; }
     }
 
-#line 697 "/usr/local/lib/bison.cc"
+//#line 697 "/usr/local/lib/bison.cc"
     /* the action file gets copied in in place of this dollarsign  */
     yyvsp -= yylen;
     yyssp -= yylen;
@@ -3138,8 +3138,8 @@ yyerrhandle:
 
 /* END */
 
-/* #line 891 "/usr/local/lib/bison.cc" */
-#line 965 "HTMLParser.y"
+/* //#line 891 "/usr/local/lib/bison.cc" */
+//#line 965 "HTMLParser.y"
 /* } */
 
 /*

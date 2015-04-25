@@ -1,39 +1,39 @@
 /***************************************************************************/
 
 /*
- * Portions Copyright (c) 1999 GMRS Software GmbH
- * Carl-von-Linde-Str. 38, D-85716 Unterschleissheim, http://www.gmrs.de
- * All rights reserved.
- *
- * Author: Arno Unkrig <arno@unkrig.de>
- *
- * All advertising materials mentioning features or use of this software
- * must display the following acknowledgement:
- * "This product includes software developed by GMRS Software GmbH."
- * The name of GMRS Software GmbH may not be used to endorse or promote
- * products derived from this software without specific prior written
- * permission.
- */
+* Portions Copyright (c) 1999 GMRS Software GmbH
+* Carl-von-Linde-Str. 38, D-85716 Unterschleissheim, http://www.gmrs.de
+* All rights reserved.
+*
+* Author: Arno Unkrig <arno@unkrig.de>
+*
+* All advertising materials mentioning features or use of this software
+* must display the following acknowledgement:
+* "This product includes software developed by GMRS Software GmbH."
+* The name of GMRS Software GmbH may not be used to endorse or promote
+* products derived from this software without specific prior written
+* permission.
+*/
 
 /* This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License in the file COPYING for more details.
- */
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation; either version 2 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License in the file COPYING for more details.
+*/
 
 /***************************************************************************/
 
 /*
- * Changes to version 1.2.2 were made by Martin Bayer <mbayer@zedat.fu-berlin.de>
- * Dates and reasons of modifications:
- * Fre Jun  8 17:46:31 CEST 2001: new method
- * Thu Oct  4 21:38:47 CEST 2001: ported to g++ 3.0
- */
+* Changes to version 1.2.2 were made by Martin Bayer <mbayer@zedat.fu-berlin.de>
+* Dates and reasons of modifications:
+* Fre Jun  8 17:46:31 CEST 2001: new method
+* Thu Oct  4 21:38:47 CEST 2001: ported to g++ 3.0
+*/
 
 /***************************************************************************/
 
@@ -42,22 +42,26 @@
 
 /* ------------------------------------------------------------------------- */
 
-#include "auto_ptr.h"
 #include <string>
 #include <list>
 #ifdef AUTO_PTR_BROKEN /* { */
-#  define auto_ptr broken_auto_ptr
-#  include <memory>
-#  undef auto_ptr
-#  include "libstd/include/auto_ptr.h"
+    //#define auto_ptr broken_auto_ptr
+    //#include <memory>
+    //#undef auto_ptr
+    #include "auto_ptr.h"
 #else /* } { */
-#  include <memory>
+    #include <memory>
 #endif /* } */
 #include <utility>
 
 #include "Area.h"
 
 /* ------------------------------------------------------------------------- */
+
+enum { ASCII, ISO8859, UTF8 };
+#define USE_ISO8859 (use_encoding == ISO8859)
+#define USE_ASCII (use_encoding == ASCII)
+#define USE_UTF8 (use_encoding == UTF8)
 
 #define LATIN1_nbsp   160
 #define LATIN1_iexcl  161
@@ -192,18 +196,18 @@ struct Element {
     virtual void unparse(ostream &, ostream_manipulator separator) const = 0;
 
     /*
-     * Attempt to line-format the element. If the element contains "Block"s,
-     * then it cannot be line-formatted, and 0 will be returned. However, it
-     * is still possible to try "format()" (see below).
-     */
+    * Attempt to line-format the element. If the element contains "Block"s,
+    * then it cannot be line-formatted, and 0 will be returned. However, it
+    * is still possible to try "format()" (see below).
+    */
     virtual Line *line_format() const
     {
         return 0;
     }
 
     /*
-     * Format the element into a rectangular area. Attempt to not exceed "width".
-     */
+    * Format the element into a rectangular area. Attempt to not exceed "width".
+    */
     virtual Area *format(
         Area::size_type /*width*/,
         int             /*halign*/
@@ -213,17 +217,17 @@ struct Element {
     }
 
     virtual struct PCData *to_PCData() { return 0; }
-    
+
     virtual list< TagAttribute >* get_attributes()
     {
         return NULL;
-    }    
-    
+    }
+
     virtual list< auto_ptr<Element> >* get_content()
     {
         return NULL;
     }
-    
+
     virtual const char* get_name()
     {
         return "Element";
@@ -239,7 +243,7 @@ struct PCData : public Element {
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Line *line_format() const;
-    
+
     virtual const char* get_name()
     {
         return "PCData";
@@ -255,7 +259,7 @@ struct Font : public Element {
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Line *line_format() const;
     /*virtual*/ Area *format(Area::size_type w, int halign) const;
-    
+
     virtual const char* get_name()
     {
         return "Font";
@@ -271,12 +275,12 @@ struct Phrase : public Element {
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Line *line_format() const;
     /*virtual*/ Area *format(Area::size_type w, int halign) const;
-    
+
     virtual list< auto_ptr<Element> >* get_content()
     {
         return texts.get();
     }
-    
+
     virtual const char* get_name()
     {
         return "Phrase";
@@ -289,18 +293,18 @@ struct Font2 : public Element {
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Line *line_format() const;
-    /*virtual*/ Area *format(Area::size_type w, int halign) const;  
+    /*virtual*/ Area *format(Area::size_type w, int halign) const;
 
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-    
+    }
+
     virtual list< auto_ptr<Element> >* get_content()
     {
         return elements.get();
     }
-    
+
     virtual const char* get_name()
     {
         return "Font2";
@@ -313,18 +317,18 @@ struct Anchor : public Element {
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Line *line_format() const;
-    /*virtual*/ Area *format(Area::size_type w, int halign) const;  
+    /*virtual*/ Area *format(Area::size_type w, int halign) const;
 
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-    
+    }
+
     virtual list< auto_ptr<Element> >* get_content()
     {
         return texts.get();
     }
-    
+
     virtual const char* get_name()
     {
         return "Anchor";
@@ -334,13 +338,13 @@ struct Anchor : public Element {
 struct BaseFont : public Element {
     auto_ptr<list<TagAttribute> > attributes; // SIZE
 
-    /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;   
+    /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
 
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-    
+    }
+
     virtual const char* get_name()
     {
         return "BaseFont";
@@ -351,13 +355,13 @@ struct LineBreak : public Element {
     auto_ptr<list<TagAttribute> > attributes; // CLEAR
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
-    /*virtual*/ Line *line_format() const;    
-    
+    /*virtual*/ Line *line_format() const;
+
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-    
+    }
+
     virtual const char* get_name()
     {
         return "LineBreak";
@@ -368,13 +372,13 @@ struct Map : public Element {
     auto_ptr<list<TagAttribute> >                   attributes; // NAME
     auto_ptr<list<auto_ptr<list<TagAttribute> > > > areas;
 
-    /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;    
-    
+    /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
+
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-    
+    }
+
     virtual const char* get_name()
     {
         return "Map";
@@ -387,17 +391,17 @@ struct Paragraph : public Element {
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Area *format(Area::size_type w, int halign) const;
-    
+
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-    
+    }
+
     virtual list< auto_ptr<Element> >* get_content()
     {
         return texts.get();
     }
-    
+
     virtual const char* get_name()
     {
         return "Paragraph";
@@ -410,13 +414,13 @@ struct Image : public Element {
     // ISMAP
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
-    /*virtual*/ Line *line_format() const;    
-    
+    /*virtual*/ Line *line_format() const;
+
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-    
+    }
+
     virtual const char* get_name()
     {
         return "Image";
@@ -432,17 +436,17 @@ struct Applet : public Element {
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Line *line_format() const;
     /*virtual*/ Area *format(Area::size_type w, int halign) const;
-    
+
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-    
+    }
+
     virtual list< auto_ptr<Element> >* get_content()
     {
         return content.get();
     }
-    
+
     virtual const char* get_name()
     {
         return "Applet";
@@ -453,12 +457,12 @@ struct Param : public Element {
     auto_ptr<list<TagAttribute> > attributes; // NAME VALUE
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
-    
+
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-    
+    }
+
     virtual const char* get_name()
     {
         return "Param";
@@ -471,17 +475,17 @@ struct Division : public Element {
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Area *format(Area::size_type w, int halign) const;
-    
+
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-    
+    }
+
     virtual list< auto_ptr<Element> >* get_content()
     {
         return body_content.get();
     }
-    
+
     virtual const char* get_name()
     {
         return "Division";
@@ -493,13 +497,13 @@ struct Center : public Element {
     auto_ptr<list<auto_ptr<Element> > > body_content;
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
-    /*virtual*/ Area *format(Area::size_type w, int halign) const;   
-    
+    /*virtual*/ Area *format(Area::size_type w, int halign) const;
+
     virtual list< auto_ptr<Element> >* get_content()
     {
         return body_content.get();
     }
-    
+
     virtual const char* get_name()
     {
         return "Center";
@@ -512,13 +516,13 @@ struct BlockQuote : public Element {
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Area *format(Area::size_type w, int halign) const;
-       
-    
+
+
     virtual list< auto_ptr<Element> >* get_content()
     {
         return content.get();
     }
-    
+
     virtual const char* get_name()
     {
         return "BlockQuote";
@@ -531,12 +535,12 @@ struct Address : public Element {
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Area *format(Area::size_type w, int halign) const;
-     
+
     virtual list< auto_ptr<Element> >* get_content()
     {
         return content.get();
     }
-    
+
     virtual const char* get_name()
     {
         return "Address";
@@ -551,17 +555,17 @@ struct Form : public Element {
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Area *format(Area::size_type w, int halign) const;
-    
+
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-    
+    }
+
     virtual list< auto_ptr<Element> >* get_content()
     {
         return content.get();
     }
-    
+
     virtual const char* get_name()
     {
         return "Form";
@@ -574,12 +578,12 @@ struct Input : public Element {
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Line *line_format() const;
-    
+
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-    
+    }
+
     virtual const char* get_name()
     {
         return "Input";
@@ -599,12 +603,12 @@ struct Select : public Element {
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Line *line_format() const;
-    
+
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-    
+    }
+
     virtual const char* get_name()
     {
         return "Select";
@@ -617,12 +621,12 @@ struct TextArea : public Element {
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Area *format(Area::size_type w, int halign) const;
-    
+
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-    
+    }
+
     virtual const char* get_name()
     {
         return "TextArea";
@@ -637,17 +641,17 @@ struct Preformatted : public Element {
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Area *format(Area::size_type w, int halign) const;
-    
+
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-    
+    }
+
     virtual list< auto_ptr<Element> >* get_content()
     {
         return texts.get();
     }
-    
+
     virtual const char* get_name()
     {
         return "Preformatted";
@@ -718,17 +722,17 @@ struct Heading : public Element {
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Area *format(Area::size_type w, int halign) const;
-    
+
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-    
+    }
+
     virtual list< auto_ptr<Element> >* get_content()
     {
         return content.get();
     }
-    
+
     virtual const char* get_name()
     {
         return "Heading";
@@ -767,12 +771,12 @@ struct Table : public Element {
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Area *format(Area::size_type w, int halign) const;
-    
+
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-        
+    }
+
     virtual const char* get_name()
     {
         return "Table";
@@ -784,13 +788,13 @@ struct NoBreak : public Element {
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Line *line_format() const;
-    
-    
+
+
     virtual list< auto_ptr<Element> >* get_content()
     {
         return content.get();
     }
-    
+
     virtual const char* get_name()
     {
         return "NoBreak";
@@ -802,12 +806,12 @@ struct HorizontalRule : public Element {
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Area *format(Area::size_type w, int halign) const;
-    
+
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-    
+    }
+
     virtual const char* get_name()
     {
         return "HorizontalRule";
@@ -825,17 +829,17 @@ struct ListItem {
         Area::size_type indent,
         int             *number_in_out = 0
         ) const = 0;
-        
+
     virtual list<TagAttribute>* get_attributes()
     {
         return NULL;
-    }    
-    
+    }
+
     virtual list< auto_ptr<Element> >* get_content()
     {
         return NULL;
     }
-    
+
     virtual const char* get_name()
     {
         return "ListItem";
@@ -853,17 +857,17 @@ struct ListNormalItem : public ListItem {
         Area::size_type indent,
         int             *number_in_out
         ) const;
-    
+
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-    
+    }
+
     virtual list< auto_ptr<Element> >* get_content()
     {
         return flow.get();
     }
-    
+
     virtual const char* get_name()
     {
         return "ListNormalItem";
@@ -880,7 +884,7 @@ struct ListBlockItem : public ListItem {
         Area::size_type indent,
         int             *
         ) const;
-        
+
     virtual const char* get_name()
     {
         return "ListBlockItem";
@@ -895,12 +899,12 @@ struct OrderedList : public Element {
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Area *format(Area::size_type w, int halign) const;
-    
+
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-        
+    }
+
     virtual const char* get_name()
     {
         return "OrderedList";
@@ -914,12 +918,12 @@ struct UnorderedList : public Element {
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Area *format(Area::size_type w, int halign) const;
-    
+
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-    
+    }
+
     virtual const char* get_name()
     {
         return "UnorderedList";
@@ -933,12 +937,12 @@ struct Dir : public Element {
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Area *format(Area::size_type w, int halign) const;
-    
+
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-    
+    }
+
     virtual const char* get_name()
     {
         return "Dir";
@@ -952,12 +956,12 @@ struct Menu : public Element {
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Area *format(Area::size_type w, int halign) const;
-    
+
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-    
+    }
+
     virtual const char* get_name()
     {
         return "Menu";
@@ -993,17 +997,17 @@ struct DefinitionList : public Element {
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Area *format(Area::size_type w, int halign) const;
-    
+
     virtual list<TagAttribute>* get_attributes()
     {
         return attributes.get();
-    }    
-    
+    }
+
     virtual list< auto_ptr<Element> >* get_content()
     {
         return preamble.get();
     }
-    
+
     virtual const char* get_name()
     {
         return "DefinitionList";

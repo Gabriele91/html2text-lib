@@ -125,7 +125,7 @@ HTMLControl::yylex(yy_HTMLParser_stype *value_return)
                      )) {
                      string &s(*value_return->strinG);
                      string::size_type x = s.length();
-                     while (x > 0 && isspace(s[x - 1])) --x;
+                     while (x > 0 && isspace(static_cast<unsigned char>(s[x - 1]))) --x;
                      s.erase(x, string::npos);
                  }
 
@@ -136,9 +136,9 @@ HTMLControl::yylex(yy_HTMLParser_stype *value_return)
                 string &s(*value_return->strinG);
                 //      bool   whitespace_only = true;
                 for (string::size_type x = 0; x < s.length(); ++x) {
-                    if (isspace(s[x])) {
+                    if (isspace(static_cast<unsigned char>(s[x]))) {
                         string::size_type y;
-                        for (y = x + 1; y < s.length() && isspace(s[y]); ++y);
+                        for (y = x + 1; y < s.length() && isspace(static_cast<unsigned char>(s[y])); ++y);
                         s.replace(x, y - x, " ");
                     }
                     else {
@@ -169,7 +169,7 @@ HTMLControl::yylex(yy_HTMLParser_stype *value_return)
             if (next_token == PCDATA) {
                 string &s(*next_token_value.strinG);
                 string::size_type x;
-                for (x = 0; x < s.length() && isspace(s[x]); ++x);
+                for (x = 0; x < s.length() && isspace(static_cast<unsigned char>(s[x])); ++x);
                 if (x > 0) s.erase(0, x);
                 if (s.empty()) {
                     delete next_token_value.strinG;
@@ -351,7 +351,7 @@ HTMLControl::yylex2(yy_HTMLParser_stype *value_return, int *tag_type_return)
                     tag_name += c;
                 }
 
-                while (isspace(c)) c = get_char();
+                while (isspace(static_cast<unsigned char>(c))) c = get_char();
 
                 /*
                  * Scan tag attributes (only for opening tags). Create the
@@ -373,14 +373,14 @@ HTMLControl::yylex2(yy_HTMLParser_stype *value_return, int *tag_type_return)
                             attribute.first += c;
                         }
 
-                        while (isspace(c)) c = get_char(); // Skip WS after attribute name
+                        while (isspace(static_cast<unsigned char>(c))) c = get_char(); // Skip WS after attribute name
 
                         /*
                          * Scan (optional) attribute value.
                          */
                         if (c == '=') {
                             c = get_char();
-                            while (isspace(c)) c = get_char();
+                            while (isspace(static_cast<unsigned char>(c))) c = get_char();
                             if (c == '"' || c == '\'') {
                                 int closing_quote = c;   // Same as opening quote!
                                 for (;;) {
@@ -406,7 +406,7 @@ HTMLControl::yylex2(yy_HTMLParser_stype *value_return, int *tag_type_return)
                                     c = get_char();
                                 }
 
-                            while (isspace(c)) c = get_char();   // Skip WS after attr value
+                            while (isspace(static_cast<unsigned char>(c))) c = get_char();   // Skip WS after attr value
                         }
 
                         /*
