@@ -974,6 +974,10 @@ struct DefinitionListItem {
     virtual ~DefinitionListItem() {}
     virtual void unparse(ostream &, ostream_manipulator separator) const = 0;
     virtual Area *format(Area::size_type w, int halign) const = 0;
+    virtual list< auto_ptr<Element> >* get_content()
+    {
+        return nullptr;
+    }
 };
 
 struct TermName : public DefinitionListItem {
@@ -981,6 +985,10 @@ struct TermName : public DefinitionListItem {
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Area *format(Area::size_type w, int halign) const;
+    virtual list< auto_ptr<Element> >* get_content()
+    {
+        return flow.get();
+    }
 };
 
 struct TermDefinition : public DefinitionListItem {
@@ -988,6 +996,10 @@ struct TermDefinition : public DefinitionListItem {
 
     /*virtual*/ void unparse(ostream &, ostream_manipulator separator) const;
     /*virtual*/ Area *format(Area::size_type w, int halign) const;
+    virtual list< auto_ptr<Element> >* get_content()
+    {
+        return flow.get();
+    }
 };
 
 struct DefinitionList : public Element {
