@@ -318,9 +318,7 @@ extern int use_encoding;
 
 /* ------------------------------------------------------------------------- */
 
-char ubuf[4];
-
-char *mkutf(unsigned long x)
+char *mkutf(unsigned long x,char ubuf[4])
 {
   memset(ubuf, 0, 4);
   if(x < 128) ubuf[0] = x;
@@ -390,7 +388,8 @@ replace_sgml_entities(string *s)
           x = 10 * x + c - '0';
         }
         if (USE_UTF8) {
-          s->replace(beg, j - beg, mkutf(x));
+          char ubuf[4];
+          s->replace(beg, j - beg, mkutf(x, ubuf));
           j = beg + 1;
         }
         else if (USE_ISO8859 && (x < 256) || USE_ASCII && (x < 128)) {
